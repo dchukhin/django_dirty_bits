@@ -1,4 +1,5 @@
-from django.db.models import get_models, ManyToManyField
+from django.apps import apps
+from django.db.models importManyToManyField
 from django.db.models.signals import post_init, post_save
 from threading import Lock
 
@@ -11,7 +12,7 @@ NEW_MODEL_HASH = None
 
 
 def register_all(strict=False):
-    models = get_models()
+    models = apps.get_models()
     for model in models:
         register(model, strict)
 
