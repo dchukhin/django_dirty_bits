@@ -1,5 +1,5 @@
 from django.apps import apps
-from django.db.models importManyToManyField
+from django.db.models import ManyToManyField
 from django.db.models.signals import post_init, post_save
 from threading import Lock
 
